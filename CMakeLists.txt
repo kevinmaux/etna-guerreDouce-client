@@ -8,12 +8,12 @@ add_subdirectory(libzmq)
 
 set(HEADERS
 
-    )
+	)
 
 set(SOURCES
-    main.cpp
-    )
+	main.cpp
+	)
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/libzmq/include)
-target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/libzmq/cmake-build/lib/libzmq.so)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/libzmq/lib/libzmq.so)
