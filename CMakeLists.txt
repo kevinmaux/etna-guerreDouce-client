@@ -21,8 +21,6 @@ set(HEADERS
         src/clientZmq.h
         src/game.h
         src/notification.h
-        iniReader/SimpleIni.h
-        iniReader/ConvertUTF.h
 	)
 
 set(SOURCES
@@ -30,11 +28,11 @@ set(SOURCES
         src/clientZmq.cpp
         src/game.cpp
         src/notification.cpp
-        iniReader/ConvertUTF.c
-        iniReader/snippets.cpp
 	)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${ZeroMQ_INCLUDE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC ext/rapidjson)
+target_include_directories(${PROJECT_NAME} PUBLIC ext/iniReader)
 target_link_libraries(${PROJECT_NAME} PUBLIC ${ZeroMQ_LIBRARY})

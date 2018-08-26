@@ -73,7 +73,7 @@ void game::notificationThread()
         data = notificationZmq.receiver();
     }
 }
-void game:: mainLoop()
+void game::mainLoop()
 {
     m_alive = true;
     std::thread alive(&game::aliveThread, this);

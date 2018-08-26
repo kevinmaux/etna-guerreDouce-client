@@ -1,6 +1,6 @@
 #include <iostream>
 #include "game.h"
-#include "../iniReader/SimpleIni.h"
+#include "../ext/iniReader/SimpleIni.h"
 
 int main()
 {
@@ -16,6 +16,7 @@ int main()
         std::cout<<"ERROR - ini file had bad parameters"<<std::endl;
         return 0;
     }
+    std::cout<<ipGame<<":"<<portGame<<" - "<<ipNotif<<":"<<portNotif<<std::endl;
     game m_game(ipGame, portGame, ipNotif, portNotif);
     m_game.mainLoop();
     return 0;
